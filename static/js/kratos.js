@@ -209,6 +209,36 @@
         var flakes=[],canvas=document.getElementById("Snow"),ctx=canvas.getContext("2d"),flakeCount=parseInt($('#Snow').attr('data-count')),mX=-100,mY=-100;
         canvas.width=window.innerWidth;
         canvas.height=window.innerHeight;
+
+        function drawStar(cx, cy, spikes, outerRadius, innerRadius, rotateDeg) {
+            // adapted from: https://stackoverflow.com/a/25840319
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.rotate(rotateDeg * Math.PI / 180);
+            var rot = Math.PI / 2 * 3;
+            var x = 0;
+            var y = 0;
+            var step = Math.PI / spikes;
+        
+            ctx.beginPath();
+            ctx.moveTo(0, 0 - outerRadius)
+            for (var i = 0; i < spikes; i++) {
+                x = Math.cos(rot) * outerRadius;
+                y = Math.sin(rot) * outerRadius;
+                ctx.lineTo(x, y)
+                rot += step;
+        
+                x = Math.cos(rot) * innerRadius;
+                y = Math.sin(rot) * innerRadius;
+                ctx.lineTo(x, y)
+                rot += step;
+            }
+            ctx.lineTo(0, 0 - outerRadius)
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+
         function snow(){
             ctx.clearRect(0,0,canvas.width,canvas.height);
             for(var i=0;i<flakeCount;i++){
@@ -228,9 +258,10 @@
                 flake.x+=flake.velX;
                 if(flake.y>=canvas.height||flake.y<=0){reset(flake);}
                 if(flake.x>=canvas.width||flake.x<=0){reset(flake);}
-                ctx.beginPath();
-                ctx.arc(flake.x,flake.y,flake.size,0,Math.PI*2);
-                ctx.fill();
+
+                flake.rotateDeg += 2 * Math.random();
+                drawStar(flake.x,flake.y,5,flake.size*2,flake.size,flake.rotateDeg);
+                
             }
             requestAnimationFrame(snow);
         };
@@ -246,7 +277,7 @@
         function init(){
             for(var i=0;i<flakeCount;i++){
                 var x=Math.floor(Math.random()*canvas.width),y=Math.floor(Math.random()*canvas.height),size=(Math.random()*3)+parseInt($('#Snow').attr('data-size')),speed=(Math.random()*1)+parseInt($('#Snow').attr('data-speed')),opacity=(Math.random()*0.5)+parseInt($('#Snow').attr('data-opacity'));
-                flakes.push({speed:speed,velY:speed,velX:0,x:x,y:y,size:size,stepSize:(Math.random())/30*parseInt($('#Snow').attr('data-step')),step:0,angle:180,opacity:opacity});
+                flakes.push({speed:speed,velY:speed,velX:0,x:x,y:y,size:size,stepSize:(Math.random())/30*parseInt($('#Snow').attr('data-step')),step:0,angle:180,opacity:opacity,rotateDeg:Math.random()*360});
             }
             snow();
         };
