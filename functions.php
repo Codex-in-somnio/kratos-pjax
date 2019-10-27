@@ -41,7 +41,7 @@ function get_the_excerpt_with_linebreak()
     if (post_password_required()) {
         $excerpt = get_the_excerpt();
     } else {
-        $excerpt = wp_strip_all_tags(get_the_content());
+        $excerpt = wp_strip_all_tags(str_replace("<br>", "\r\n", get_the_content()));
     }
     return wpautop(trim_words_keep_linebreak($excerpt, kratos_option('w_num')));
 }
