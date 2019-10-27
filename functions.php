@@ -16,12 +16,12 @@ function trim_words_keep_linebreak($text, $num_words)
 {
     // https://developer.wordpress.org/reference/functions/wp_trim_words/
     if (strpos(_x('words', 'Word count type. Do not translate!'), 'characters') === 0 && preg_match('/^utf\-?8$/i', get_option('blog_charset'))) {
-        $text = trim(preg_replace("/[\r\t ]+/", ' ', $text), ' ');
+        $text = trim(preg_replace("/[\t ]+/", ' ', $text), ' ');
         preg_match_all('/./u', $text, $words_array);
         $words_array = array_slice($words_array[0], 0, $num_words + 1);
         $sep         = '';
     } else {
-        $words_array = preg_split("/[\r\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY);
+        $words_array = preg_split("/[\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY);
         $sep         = ' ';
     }
     $more = __( '&hellip;' );
@@ -43,5 +43,5 @@ function get_the_excerpt_with_linebreak()
     } else {
         $excerpt = wp_strip_all_tags(get_the_content());
     }
-    return trim_words_keep_linebreak($excerpt, kratos_option('w_num'));
+    return wpautop(trim_words_keep_linebreak($excerpt, kratos_option('w_num')));
 }
