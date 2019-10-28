@@ -16,16 +16,16 @@ function trim_words_keep_linebreak($text, $num_words)
 {
     // https://developer.wordpress.org/reference/functions/wp_trim_words/
     if (strpos(_x('words', 'Word count type. Do not translate!'), 'characters') === 0 && preg_match('/^utf\-?8$/i', get_option('blog_charset'))) {
-        $text = trim(preg_replace("/[\t ]+/", ' ', $text), ' ');
-        preg_match_all('/./u', $text, $words_array);
-        $words_array = array_slice($words_array[0], 0, $num_words + 1);
+        $text = trim(preg_replace("/[\t\r ]+/", ' ', $text), ' ');
+        preg_match_all('/(.|\n)/u', $text, $words_array);
+        $words_array = array_slice($words_array[0], 0, $num_words + 4);
         $sep         = '';
     } else {
-        $words_array = preg_split("/[\t ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY);
+        $words_array = preg_split("/[\t\r ]+/", $text, $num_words + 1, PREG_SPLIT_NO_EMPTY);
         $sep         = ' ';
     }
     $more = __( '&hellip;' );
-    if (count($words_array) > $num_words) {
+    if (count($words_array) > $num_words + 3) {
         array_pop($words_array);
         $text = implode($sep, $words_array);
         $text = $text . $more;
@@ -41,7 +41,7 @@ function get_the_excerpt_with_linebreak()
     if (post_password_required()) {
         $excerpt = get_the_excerpt();
     } else {
-        $excerpt = wp_strip_all_tags(str_replace("<br>", "\r\n", get_the_content()));
+        $excerpt = wp_strip_all_tags(preg_replace("/(?i)(<br[ \/]{0,}>)/", "\n", get_the_content()));
     }
     return wpautop(trim_words_keep_linebreak($excerpt, kratos_option('w_num')));
 }
