@@ -489,7 +489,7 @@ textarea{overflow:auto}
 .kratos-entry-border-new .kratos-post-meta-new{padding:3px 20px;border-top:1px solid #f3f3f3;line-height:27px;overflow:hidden;display:block;clear:both;font-size:12px;background:rgba(253,253,253,.7)}
 .kratos-entry-border-new .stickyimg{position:absolute;z-index:2;left:100%;margin-left:-65px}
 .kratos-entry-thumb-new{position:relative;float:left;width:240px;height:145px;overflow:hidden;margin:20px}
-.kratos-entry-thumb-new img{padding:2px;border:1px solid #f3f3f3;height:145px;width:240px}
+.kratos-entry-thumb-new img{padding:2px;border:1px solid #f3f3f3;max-height:145px;max-width:240px;width:auto;height:auto;display:block;margin:auto}
 .kratos-post-meta-new a{margin-right:15px}
 .kratos-post-meta-new .read-more{margin-right:0}
 .kratos-entry-header .kratos-post-meta a{font-size:13px;margin-right:10px;margin-bottom:20px;color:#777676}
