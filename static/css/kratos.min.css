@@ -767,7 +767,7 @@ h4{font-size:15px}
 .share-plain .share-int{margin-left:-75px;padding:5px 15px;width:150px}
 .share-plain .share-int p{margin:10px 0 5px;font-size:10px}
 .kratos-entry-thumb-new{position:relative;float:none;width:auto;height:auto;overflow:hidden;padding:0;margin:0;margin-bottom:20px}
-.kratos-entry-thumb-new img{height:auto;max-width:100%;width:750px;padding:0;border:0}
+.kratos-entry-thumb-new img{height:auto;max-width:100%;max-height:initial;width:750px;padding:0;border:0}
 .kratos-post-inner-new{margin-left:0;height:auto;padding:0 15px}
 .kratos-post-meta-new .read-more{margin-right:8px}
 .kratos-entry-content-new{height:auto}
