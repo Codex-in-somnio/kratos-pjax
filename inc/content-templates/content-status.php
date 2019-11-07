@@ -6,7 +6,7 @@
             <footer>
                 <?php echo get_the_date();echo get_the_date(' H:i'); ?> • 
                 <?php echo kratos_get_post_views();_e('次阅读','moedog'); ?> • 
-                <a href="javascript:;" data-action="love" data-id="<?php the_ID(); ?>" class="Love">
+                <a href="javascript:;" data-action="love" data-id="<?php the_ID(); ?>" class="Love<?php if(isset($_COOKIE['love_'.$post->ID])) echo ' done';?>">
                     <i class="fa fa-thumbs-o-up"></i>
                     <?php if(get_post_meta($post->ID,'love',true)){echo get_post_meta($post->ID,'love',true);}else{echo '0'; }_e('人点赞','moedog'); ?>
                 </a> • 
