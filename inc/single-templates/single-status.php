@@ -13,7 +13,7 @@
             <i class="fa fa-refresh"></i>
                 <div class="kratos-status-inner">
                     <header><?php the_content() ?></header>
-                    <footer><?php echo get_the_date();echo get_the_date(' H:i'); ?> • <?php comments_number('0','1','%');_e('条评论','moedog'); ?> • <?php echo kratos_get_post_views();_e('次阅读','moedog'); ?> • <?php if(get_post_meta($post->ID,'love',true)){echo get_post_meta($post->ID,'love',true);}else{echo '0'; }_e('人点赞','moedog'); ?></footer>
+                    <footer><?php echo get_the_date();echo get_the_date(' H:i'); ?> • <?php echo kratos_get_post_views();_e('次阅读','moedog'); ?> • <?php if(get_post_meta($post->ID,'love',true)){echo get_post_meta($post->ID,'love',true);}else{echo '0'; }_e('人点赞','moedog'); ?> • <?php comments_number('0','1','%');_e('条评论','moedog'); ?></footer>
                 </div>
             </div>
             <footer class="kratos-entry-footer clearfix">

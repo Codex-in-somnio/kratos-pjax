@@ -14,10 +14,10 @@
                 <div class="kratos-post-meta text-center">
                     <span>
                     <i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
-                    <i class="fa fa-commenting-o"></i> <?php comments_number('0','1','%');_e('条评论','moedog'); ?>
                     <i class="fa fa-eye"></i> <?php echo kratos_get_post_views();_e('次阅读','moedog'); ?>  
                     <span class="hd">
                     <i class="fa fa-thumbs-o-up"></i> <?php if(get_post_meta($post->ID,'love',true)){echo get_post_meta($post->ID,'love',true);}else{echo '0'; }_e('人点赞','moedog'); ?>
+                    <i class="fa fa-commenting-o"></i> <?php comments_number('0','1','%');_e('条评论','moedog'); ?>
                     <i class="fa fa-user"></i> <?php the_author(); ?>
                     </span>
                     </span>
