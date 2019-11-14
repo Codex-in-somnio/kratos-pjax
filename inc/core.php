@@ -91,6 +91,7 @@ function kratos_theme_scripts(){
         wp_enqueue_script('theme',$jsdir.'/static/js/theme.min.js',array(),KRATOS_VERSION);
         wp_enqueue_script('kratos',$jsdir.'/static/js/kratos.js',array(),KRATOS_VERSION);
         if(kratos_option('page_pjax')) wp_enqueue_script('pjax',$jsdir.'/static/js/pjax.js',array(),KRATOS_VERSION);
+        wp_enqueue_script('in0v0',$jsdir.'/static/js/in0v0.js',array(),KRATOS_VERSION);
     }
     if(kratos_option('site_girl')&&!wp_is_mobile()){
         wp_enqueue_script('live2d',$jsdir.'/static/js/live2d.js',array(),'l2d');
