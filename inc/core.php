@@ -124,7 +124,7 @@ remove_action('wp_head','adjacent_posts_rel_link_wp_head',10,0);
 remove_action('wp_head','rel_canonical');
 remove_action('wp_head','feed_links',2);
 remove_action('wp_head','feed_links_extra',3);
-remove_action('wp_head','rest_output_link_wp_head',10);
+// remove_action('wp_head','rest_output_link_wp_head',10);
 remove_action('wp_head','wp_oembed_add_discovery_links',10);
 remove_action('admin_print_scripts','print_emoji_detection_script');
 remove_action('admin_print_styles','print_emoji_styles');
@@ -138,13 +138,13 @@ remove_filter('wp_mail','wp_staticize_emoji_for_email');
 add_filter('emoji_svg_url','__return_false');
 add_filter('show_admin_bar','__return_false');
 add_action('wp_enqueue_scripts','mt_enqueue_scripts',1);
-add_filter('rest_enabled','_return_false');
-add_filter('rest_jsonp_enabled','_return_false');
+// add_filter('rest_enabled','_return_false');
+// add_filter('rest_jsonp_enabled','_return_false');
 function mt_enqueue_scripts(){wp_deregister_script('jquery');}
 function disable_embeds_init(){
     global $wp;
     $wp->public_query_vars = array_diff($wp->public_query_vars,array('embed'));
-    remove_action('rest_api_init','wp_oembed_register_route');
+    // remove_action('rest_api_init','wp_oembed_register_route');
     add_filter('embed_oembed_discover','__return_false');
     remove_filter('oembed_dataparse','wp_filter_oembed_result',10);
     remove_action('wp_head','wp_oembed_add_discovery_links');
