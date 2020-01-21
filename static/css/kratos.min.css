@@ -879,3 +879,5 @@ body{background:#fff!important}
 #kratos-header,.kratos-start,#kratos-widget-area,.comments-area .avatar,#respond,.cd-tool{display:none}
 .comments-area .comment-awaiting-moderation,.comments-area .comment-meta,.comments-area .fn{margin-left:0}
 }
+.pwd-form {max-width:460px; margin:auto; padding-top:10px}
+img.post-pwd {opacity:0.82}

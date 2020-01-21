@@ -54,13 +54,15 @@ function custom_password_form(){
     <form class="protected-post-form" action="'.$url.'?action=postpass" method="post">
         <div class="panel panel-pwd">
             <div class="panel-body text-center">
-                <img class="post-pwd" src="'.get_template_directory_uri().'/static/images/fingerprint.png"><br />
-                <h4>'.__('这是一篇受保护的文章，请输入阅读密码！','moedog').'</h4>
-                <div class="input-group" id="respond">
-                    <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                    <p><input class="form-control" placeholder="'.__('输入阅读密码','moedog').'" name="post_password" id="'.$label.'" type="password" size="20"></p>
+                <img class="post-pwd" src="'.get_template_directory_uri().'/static/images/protected.jpg">
+                <div class="pwd-form">
+                    <h4>'.__('这是一篇受保护的文章，请输入阅读密码！','moedog').'</h4>
+                    <div class="input-group" id="respond">
+                        <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                        <p><input class="form-control" placeholder="'.__('输入阅读密码','moedog').'" name="post_password" id="'.$label.'" type="password" size="20"></p>
+                    </div>
+                    <div class="comment-form" style="margin-top:15px;"><button id="generate" class="btn btn-primary btn-pwd" name="Submit" type="submit">'.__('确认','moedog').'</button></div>
                 </div>
-                <div class="comment-form" style="margin-top:15px;"><button id="generate" class="btn btn-primary btn-pwd" name="Submit" type="submit">'.__('确认','moedog').'</button></div>
             </div>
         </div>
     </form>';
