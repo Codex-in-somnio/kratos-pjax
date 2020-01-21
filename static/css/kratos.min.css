@@ -461,7 +461,6 @@ textarea{overflow:auto}
 .kratos-status-inner{margin-left:30px}
 .kratos-status-inner img{max-width:100%}
 .kratos-status-inner p{margin:0;color:#777;font-size:17px;line-height:1.5;font-weight:200}
-.kratos-status-inner p a{color:#777}
 .kratos-status-inner footer{font-size:12px;color:#aaa}
 .kratos-status-inner footer a{color:#aaa}
 .kratos-hentry{margin-bottom:15px;background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);border-radius:0;-webkit-transition:all .6s ease;transition:all .6s ease}
