@@ -54,7 +54,7 @@ function custom_password_form(){
     <form class="protected-post-form" action="'.$url.'?action=postpass" method="post">
         <div class="panel panel-pwd">
             <div class="panel-body text-center">
-                <img class="post-pwd" src="'.get_template_directory_uri().'/static/images/protected.jpg">
+                <img class="post-pwd" src="'.get_template_directory_uri().'/static/images/protected.png">
                 <div class="pwd-form">
                     <h4>'.__('这是一篇受保护的文章，请输入阅读密码！','moedog').'</h4>
                     <div class="input-group" id="respond">
