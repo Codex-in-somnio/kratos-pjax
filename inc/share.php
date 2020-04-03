@@ -34,6 +34,19 @@
                 <p><?php _e('打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮','moedog'); ?></p>
             </div>
         </a>
+        <a href="javascript:;" class="share-plain copylink pop" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-link"></i>
+            </div>
+            <div class="share-int">
+                <div class="form-group" onclick="share('copylink');">
+                    <input class="form-control" id="share-link-textfield" value="<?php echo get_permalink(get_the_ID()); ?>" readonly="readonly">
+                    <button type="button" class="form-control btn btn-primary">
+                        <?php _e('点击复制本文链接','moedog'); ?>
+                    </button>
+                </div>
+            </div>
+        </a>
     </div>
     <script type="text/javascript">
     function share(obj){
@@ -59,6 +72,14 @@
              _URL=facebookShareURL+"u="+host_url;
         }else if(obj=="twitter"){
              _URL=twitterShareURL+"text="+title+excerpt+"&url="+host_url;
+        }else if(obj=="copylink"){
+            oncopy = document.body.oncopy;
+            document.body.oncopy = undefined;
+            $('#share-link-textfield').select();
+            document.execCommand("copy");
+            addComment.createButterbar('已复制本文链接至剪贴板');
+            document.body.oncopy = oncopy
+            return;
         }
         window.open(_URL);
     }

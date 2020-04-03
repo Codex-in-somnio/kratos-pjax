@@ -513,6 +513,7 @@ textarea{overflow:auto}
 .kratos-entry-footer .post-like-donate .facebook:focus{color:#3e569b!important}
 .kratos-entry-footer .post-like-donate .googleplus:focus{color:#f63e28!important}
 .kratos-entry-footer .post-like-donate .twitter:focus{color:#55acee!important}
+.kratos-entry-footer .post-like-donate .copylink:focus{color:#888888!important}
 .donate-box .meta-pay{margin-top:12px;margin-bottom:12px;color:#333}
 .donate-box .qr-pay img{width:200px;height:200px}
 .donate-box .choose-pay{margin-top:6px}
@@ -527,7 +528,8 @@ textarea{overflow:auto}
 .share-wrap{display:block;margin:10px 0 -20px}
 .share-plain,.share-wrap{position:relative;text-align:center}
 .share-plain{display:inline-block!important;box-sizing:border-box;margin:4px 3px!important;padding:0;width:2pc!important;height:2pc!important;border:1px solid #bdc4d6;border-radius:30px!important;color:#bdc4d6;white-space:nowrap;line-height:30px!important;cursor:url(../images/pointer.cur),auto;-webkit-transition:all .2s ease;transition:all .2s ease;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
-.share-plain .icon-wrap{float:left;width:2pc;height:2pc;vertical-align:middle;text-align:center;line-height:30px}
+.share-plain:hover{opacity:0.8!important}
+.share-plain .icon-wrap{float:left;width:2pc;height:2pc;vertical-align:middle;text-align:center;line-height:30px;margin-left:-1px}
 .share-plain.weibo{border-color:#e6162d!important;color:#e6162d!important}
 .share-plain.twitter,.share-plain.weibo{border-width:1px!important;background-color:transparent}
 .share-plain.twitter{border-color:#55acee!important;color:#55acee!important}
@@ -535,11 +537,17 @@ textarea{overflow:auto}
 .share-plain.facebook,.share-plain.googleplus{border-width:1px!important;background-color:transparent}
 .share-plain.googleplus{border-color:#f63e28!important;color:#f63e28!important}
 .share-plain.weixin{border-color:#38ad5a!important;border-width:1px!important;background-color:transparent;color:#38ad5a!important}
-.share-plain.pop:hover .share-int{display:block;opacity:1}
+.share-plain.copylink{border-color:#888888!important;border-width:1px!important;background-color:transparent;color:#888888!important}
+.share-plain.pop:hover .share-int{display:block;opacity:1;z-index:100}
 .share-plain .share-int{position:absolute;bottom:50px;left:50%;z-index:8;display:none;margin-left:-110px;padding:10px;width:220px;border:1px solid #d8d8d8;border-radius:2px;background-color:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);color:#555;text-align:center;opacity:.2;-webkit-transition:all .1s ease;transition:all .1s ease}
 .share-plain .share-int:after{position:absolute;bottom:-20px;left:50%;display:block;margin-left:-25px;width:50px;height:20px;background:url(../images/arrow.png) 0 0 no-repeat;background-size:50px 20px;content:''}
 .share-plain .share-int canvas,.share-plain .share-int img{margin:15px 0 -6px;height:auto;max-width:100%}
 .share-plain .share-int p{margin:15px 0 0;color:#676767;white-space:normal;word-wrap:break-word;font-size:14px;line-height:1.5}
+.kratos-status-inner .share-wrap{height:16px;display:inline-block;margin:0;margin-left:0.5em;margin-top:-3px;vertical-align:middle;}
+.kratos-status-inner .share-group{display:inline}
+.kratos-status-inner .share-plain{width:1pc!important;height:1pc!important;margin:0 3px!important}
+.kratos-status-inner .icon-wrap{width:1pc;height:1pc;margin-top:-8px;margin-left:-1px;font-size:0.5pc}
+.kratos-status-inner .share-plain .share-int{bottom: 25px}
 .kratos-copyright{background-color:rgba(220,220,220,.7);margin:25px 0 0}
 .kratos-copyright h5{margin:15px;color:#666;font-size:13px;font-weight:300}
 .kratos-copyright a{color:#777}
