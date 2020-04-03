@@ -1,5 +1,3 @@
-**This repository hosts the [Kartos-PJAX](https://github.com/xb2016/kratos-pjax/) theme modified for [in0v0.in](https://in0v0.in/).**
-
 <p align="center">
 <img src="https://img.moedog.org/images/2019/08/21/kratos1.jpg" alt="KRATOS"/>
 </p>
