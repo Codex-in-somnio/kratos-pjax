@@ -1,26 +1,26 @@
 <div class="share-wrap" style="display: none;">
     <div class="share-group">
-        <a href="javascript:;" class="share-plain twitter" onclick="share('qq');" rel="nofollow">
+        <a href="javascript:;" class="share-plain twitter" onclick="share_<?php echo get_the_ID(); ?>('qq');" rel="nofollow">
             <div class="icon-wrap">
                 <i class="fa fa-qq"></i>
             </div>
         </a>
-        <a href="javascript:;" class="share-plain weixin" onclick="share('qzone');" rel="nofollow">
+        <a href="javascript:;" class="share-plain weixin" onclick="share_<?php echo get_the_ID(); ?>('qzone');" rel="nofollow">
             <div class="icon-wrap">
                 <i class="fa fa-star"></i>
             </div>
         </a>
-        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+        <a href="javascript:;" class="share-plain weibo" onclick="share_<?php echo get_the_ID(); ?>('weibo');" rel="nofollow">
             <div class="icon-wrap">
                 <i class="fa fa-weibo"></i>
             </div>
         </a>
-        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share_<?php echo get_the_ID(); ?>('facebook');" rel="nofollow">
             <div class="icon-wrap">
                 <i class="fa fa-facebook"></i>
             </div>
         </a>
-        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share_<?php echo get_the_ID(); ?>('twitter');" rel="nofollow">
             <div class="icon-wrap">
                 <i class="fa fa-twitter"></i>
             </div>
@@ -30,7 +30,7 @@
                 <i class="fa fa-weixin"></i>
             </div>
             <div class="share-int">
-                <div class="qrcode"><img src="https://api.fczbl.vip/qr/?m=0&url=<?php the_permalink() ?>" width="150" height="150"></div>
+                <div class="qrcode"><img src="https://api.fczbl.vip/qr/?m=0&url=<?php echo get_permalink(get_the_ID()); ?>" width="150" height="150"></div>
                 <p><?php _e('打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮','moedog'); ?></p>
             </div>
         </a>
@@ -49,13 +49,13 @@
         </a>
     </div>
     <script type="text/javascript">
-    function share(obj){
+    function share_<?php echo get_the_ID(); ?>(obj){
         var qqShareURL="http://connect.qq.com/widget/shareqq/index.html?";
         var weiboShareURL="http://service.weibo.com/share/share.php?";
         var qzoneShareURL="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
         var facebookShareURL="https://www.facebook.com/sharer/sharer.php?";
         var twitterShareURL="https://twitter.com/intent/tweet?";
-        var host_url="<?php the_permalink(); ?>";
+        var host_url="<?php echo get_permalink(get_the_ID()); ?>";
         var title='<?php  echo str_replace("%22","%2522",rawurlencode('【'.get_the_title().'】')); ?>';
         var qqtitle='<?php echo rawurlencode('【'.get_the_title().'】'); ?>';
         var excerpt='<?php echo rawurlencode(get_the_excerpt()); ?>';
@@ -79,7 +79,6 @@
         oncopy = document.body.oncopy;
         document.body.oncopy = undefined;
         $(elem).children('.share-link-textfield').select();
-        console.log(this);
         document.execCommand("copy");
         addComment.createButterbar('已复制本文链接至剪贴板');
         document.body.oncopy = oncopy;
