@@ -30,7 +30,7 @@
                 <i class="fa fa-weixin"></i>
             </div>
             <div class="share-int">
-                <div class="qrcode"><img src="https://api.fczbl.vip/qr/?m=0&url=<?php echo get_permalink(get_the_ID()); ?>" width="150" height="150"></div>
+                <div class="qrcode"><img src="https://api.fczbl.vip/qr/?m=0&url=<?php echo get_permalink(); ?>" width="150" height="150"></div>
                 <p><?php _e('打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮','moedog'); ?></p>
             </div>
         </a>
@@ -40,7 +40,7 @@
             </div>
             <div class="share-int">
                 <div class="form-group" onclick="copyLink(this)">
-                    <input class="form-control share-link-textfield" value="<?php echo get_permalink(get_the_ID()); ?>" readonly="readonly">
+                    <input class="form-control share-link-textfield" value="<?php echo get_permalink(); ?>" readonly="readonly">
                     <button type="button" class="form-control btn btn-primary">
                         <?php _e('点击复制本文链接','moedog'); ?>
                     </button>
@@ -55,7 +55,7 @@
         var qzoneShareURL="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
         var facebookShareURL="https://www.facebook.com/sharer/sharer.php?";
         var twitterShareURL="https://twitter.com/intent/tweet?";
-        var host_url="<?php echo get_permalink(get_the_ID()); ?>";
+        var host_url="<?php echo get_permalink(); ?>";
         var title='<?php  echo str_replace("%22","%2522",rawurlencode('【'.get_the_title().'】')); ?>';
         var qqtitle='<?php echo rawurlencode('【'.get_the_title().'】'); ?>';
         var excerpt='<?php echo rawurlencode(get_the_excerpt()); ?>';
