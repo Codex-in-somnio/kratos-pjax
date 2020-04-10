@@ -18,9 +18,9 @@
                     <?php comments_number('0','1','%');_e('条评论','moedog'); ?>
                 </a>
                 <?php
-                if(true){
+                if (kratos_option('post_share')) {
                     echo ' • <a href="javascript:;" class="Share"><i class="fa fa-share-alt"></i> '.__('分享','moedog').'</a>';
-                    require_once(get_template_directory().'/inc/share.php');
+                    include(get_template_directory().'/inc/share.php');
                 } ?>
             </footer>
         </div>

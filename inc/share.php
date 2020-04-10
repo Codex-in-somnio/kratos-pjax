@@ -39,8 +39,8 @@
                 <i class="fa fa-link"></i>
             </div>
             <div class="share-int">
-                <div class="form-group" onclick="share('copylink');">
-                    <input class="form-control" id="share-link-textfield" value="<?php echo get_permalink(get_the_ID()); ?>" readonly="readonly">
+                <div class="form-group" onclick="copyLink(this)">
+                    <input class="form-control share-link-textfield" value="<?php echo get_permalink(get_the_ID()); ?>" readonly="readonly">
                     <button type="button" class="form-control btn btn-primary">
                         <?php _e('点击复制本文链接','moedog'); ?>
                     </button>
@@ -72,16 +72,17 @@
              _URL=facebookShareURL+"u="+host_url;
         }else if(obj=="twitter"){
              _URL=twitterShareURL+"text="+title+excerpt+"&url="+host_url;
-        }else if(obj=="copylink"){
-            oncopy = document.body.oncopy;
-            document.body.oncopy = undefined;
-            $('#share-link-textfield').select();
-            document.execCommand("copy");
-            addComment.createButterbar('已复制本文链接至剪贴板');
-            document.body.oncopy = oncopy
-            return;
         }
         window.open(_URL);
+    }
+    function copyLink(elem) {
+        oncopy = document.body.oncopy;
+        document.body.oncopy = undefined;
+        $(elem).children('.share-link-textfield').select();
+        console.log(this);
+        document.execCommand("copy");
+        addComment.createButterbar('已复制本文链接至剪贴板');
+        document.body.oncopy = oncopy;
     }
     </script>
 </div>

@@ -3,7 +3,7 @@
     'use strict';
     var shareMenu = function(){
         $(document).on('click','.Share',function(){
-            $('.share-wrap').fadeToggle('slow');
+            $(this).parent().children('.share-wrap').fadeToggle('slow');
         });
     }
     var sidebaraffix = function(){
