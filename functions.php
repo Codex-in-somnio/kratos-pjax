@@ -45,3 +45,11 @@ function get_the_excerpt_with_linebreak()
     }
     return wpautop(trim_words_keep_linebreak($excerpt, kratos_option('w_num')));
 }
+
+function my_default_title_filter() {
+    global $post_type;
+    if ('post' == $post_type) {
+        return "status" . date("YmdHi");
+    }
+}
+add_filter('default_title', 'my_default_title_filter');
