@@ -6,6 +6,18 @@
             $(this).parent().children('.share-wrap').fadeToggle('slow');
         });
     }
+    var QRCode = function(){
+        $('.qrcode').each(function(index,el){
+			var url = $(this).data('url');
+			if($.fn.qrcode){
+				$(this).qrcode({
+					text:url,
+					width:150,
+					height:150,
+				});
+			}
+		});
+    }
     var sidebaraffix = function(){
         if($('#sidebar').height()&&xb.site_sh){
             if($('#main').height()>$('#sidebar').height()){
@@ -290,6 +302,7 @@
         sidebaraffix();
         showPhotos();
         OwOcfg();
+        QRCode();
     }
     $(function(){
         gotop();
@@ -302,6 +315,7 @@
         donateConfig();
         showlove();
         shareMenu();
+        QRCode();
         OwOcfg();
         wechatpic();
         if($('div').hasClass('aplayer-footer')) APF();
