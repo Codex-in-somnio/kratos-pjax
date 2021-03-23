@@ -22,7 +22,7 @@
         </div>
     </header>
     <div class="kratos-entry-content clearfix">
-    <p><?php echo get_the_excerpt_with_linebreak(); ?></p>
+    <?php echo get_the_excerpt_with_linebreak(); ?>
     </div>
 </div>
 <?php }else{ ?>
@@ -37,7 +37,7 @@
             <h2 class="kratos-entry-title-new"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
         </header>
         <div class="kratos-entry-content-new">
-            <p><?php echo get_the_excerpt_with_linebreak(); ?></p>
+            <?php echo get_the_excerpt_with_linebreak(); ?>
         </div>
     </div>
     <div class="kratos-post-meta-new">
